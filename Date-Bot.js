@@ -35,3 +35,5 @@ function helpS() {
 setTimeout(helpS, 2000);
     }
 });
+
+client.login(process.env.HUITEBEANETOKEN)
