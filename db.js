@@ -47,5 +47,45 @@ setInterval(changeColor, config.speed);
 
 
 
+client.on('message', function(message) {
+    
+    if(message.content === (p + "loop")) { 
+message.delete()
+message.channel.send("@everyone, до мирового босса осталось **15 минут**")
+setTimeout(int, 2000)
+
+ }
+
+function int() {           
+console.log("start TIMER")          
+setTimeout(int2, 21600000)
+}
+
+
+function int2() {
+client.users.get("405258156063850497").send("Checking Timer activated2")
+setTimeout(int3, 21600000)
+}
+
+
+function int3() {
+client.users.get("405258156063850497").send("Checking Timer activated3")
+setTimeout(int4, 21600000)
+}
+
+
+function int4() {
+client.users.get("405258156063850497").send("Checking Timer activated4")
+setTimeout(int5, 21600000)
+}
+
+function int5() {
+message.channel.send("@everyone, до мирового босса **осталось 15 минут**")
+client.users.get("405258156063850497").send("Reload Timer")
+setTimeout(int, 6000)
+}
+   
+});
+
 client.login(config.token);
 
