@@ -88,4 +88,3 @@ setTimeout(int, 6000)
 });
 
 client.login(config.token);
-
