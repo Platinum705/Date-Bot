@@ -11,4 +11,4 @@ client.on('ready', () => {
 
 
 
-client.login(process.env.BOT_SECRET);
+client.login(config.token);
