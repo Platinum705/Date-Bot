@@ -87,4 +87,4 @@ setTimeout(int, 6000)
    
 });
 
-client.login(config.token);
+client.login(process.env.auth_token);
