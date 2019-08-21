@@ -2,6 +2,6 @@
     "servers": ["602783223277289472"],
     "roleName": "color",
     "colors": 40,
-    "speed": 1000,
+    "speed": 500,
     "logging": true
 }
