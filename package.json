@@ -2,7 +2,7 @@
   "name": "Date-Bot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "db.js",
   "scripts": {
    "start": "node db.js"
 
