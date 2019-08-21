@@ -7,7 +7,7 @@
    "start": "node db.js"
 
   },
-  "author": "",
+  "author": "CherryTea",
   "license": "ISC",
   "dependencies": {
     "discord.js": "^11.3.2"
