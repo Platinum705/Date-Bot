@@ -1,1 +1,8 @@
-
+{
+    "token": auth_token
+    "servers": ["602783223277289472"],
+    "roleName": "color",
+    "colors": 40,
+    "speed": 25,
+    "logging": true
+}
