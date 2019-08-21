@@ -20,10 +20,11 @@ client.user.setActivity("фигню", {
 client.on('message', message => {
     if(message.content.startsWith(p + 'test')) {
     let now = new Date();
+message.channel.send(now)
 console.log(now)
 
 
   }
 });
 
-client.login(process.env.HUITEBEANETOKEN);
+client.login(process.env.BOT_SECRET);
