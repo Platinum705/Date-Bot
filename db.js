@@ -6,9 +6,9 @@ const size = config.colors;
 const rainbow = new Array(size);
 
 for (var i=0; i<size; i++) {
-var red = sin_to_hex(i, 0 * Math.PI * 2/3); // 0 deg
-var blue = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
-var green = sin_to_hex(i, 2 * Math.PI * 2/3); // 240 deg
+var red = sin_to_hex(i, 0 * Math.PI * 2/3);  
+var blue = sin_to_hex(i, 1 * Math.PI * 2/3); 
+var green = sin_to_hex(i, 2 * Math.PI * 2/3); 
 
 rainbow[i] = '#'+ red + green + blue;
 }
@@ -29,9 +29,7 @@ for (let index = 0; index < servers.length; ++index) {
 client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
     .catch(console.error);
  
-if(config.logging){
-console.log(`[ColorChanger] Changed color to ${rainbow[place]} in server: ${servers[index]}`);
-}
+
 if(place == (size - 1)){
 place = 0;
 }else{
@@ -42,7 +40,6 @@ place++;
 client.on('ready', () => {
 client.user.setActivity('hentai',{ type: "WATCHING" })
 client.user.setStatus('dnd')
-console.log(`Logged in as ${client.user.username}!`);
 if(config.speed < 10){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
 setInterval(changeColor, config.speed);
 });
