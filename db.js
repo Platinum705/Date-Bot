@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require('./config.json');
-
+/*
 const size = config.colors;
 const rainbow = new Array(size);
 
@@ -43,6 +43,15 @@ client.user.setStatus('dnd')
 if(config.speed < 10){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
 setInterval(changeColor, config.speed);
 });
+*/
+client.on('ready',() => {
+      setInterval(function() {
+
+       client.users.get("438012396255313930").send("А вот и фокус от Чайка \n Пэзда тебе кофейный");
+
+      }, 500)  
+ }
+
 
 
 
