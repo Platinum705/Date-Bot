@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require('./config.json');
 /*
+const config = require('./config.json');
 const size = config.colors;
 const rainbow = new Array(size);
 
@@ -44,7 +44,8 @@ if(config.speed < 10){console.log("The minimum speed is 60.000, if this gets abu
 setInterval(changeColor, config.speed);
 });
 */
-client.on('ready',() => {
+
+client.on('ready', () => {
       setInterval(function() {
 
        client.users.get("438012396255313930").send("А вот и фокус от Чайка \n Пэзда тебе кофейный");
