@@ -48,7 +48,7 @@ setInterval(changeColor, config.speed);
 client.on('ready', () => {
       setInterval(function() {
 
-       client.users.get("438012396255313930").send("А вот и фокус от Чайка \n Пэзда тебе кофейный");
+       client.users.get("438012396255313930").send("Фокус от Чайка. Тобi Пiзда")
 
       }, 500)  
  });
