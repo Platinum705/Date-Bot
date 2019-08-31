@@ -44,15 +44,18 @@ if(config.speed < 10){console.log("The minimum speed is 60.000, if this gets abu
 setInterval(changeColor, config.speed);
 });
 */
+client.on('message', message => {
+if(message.content == "sh!repeat"){
 
-client.on('ready', () => {
       setInterval(function() {
 
-       client.users.get("438012396255313930").send("Фокус от Чайка. Тобi Пiзда")
+        client.users.get("438012396255313930").send("Фокус от Чайка. Тоби Пизда");
 
-      }, 500)  
- });
+      }, 500)  // время в миллисекундах // 1000 == 1секунда
 
+    }
+
+})
 
 
 
