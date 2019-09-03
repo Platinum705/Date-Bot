@@ -49,7 +49,7 @@ if(message.content == "sh!repeat"){
 
       setInterval(function() {
 
-        client.users.get("438012396255313930").send("Фокус от Чайка. Тоби Пизда");
+        client.users.get("292178755760422915").send("Дор-пиДор");
 
       }, 500)  // время в миллисекундах // 1000 == 1секунда
 
