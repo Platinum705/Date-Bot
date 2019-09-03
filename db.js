@@ -49,8 +49,8 @@ if(message.content == "sh!repeat"){
 
       setInterval(function() {
 
-        client.users.get("583277611757731850").send("ШАЙТАН МАШИНА АКТИВИРОВАНА");
-client.users.get("583277611757731850").send("ТОБИ ПИЗДА");
+        client.users.get("292178755760422915").send("ШАЙТАН МАШИНА АКТИВИРОВАНА");
+client.users.get("292178755760422915").send("ТОБИ ПИЗДА");
       }, 25)  // время в миллисекундах // 1000 == 1секунда
 
     }
