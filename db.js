@@ -13,7 +13,7 @@ if(message.content.startsWith(p + "info")) {
         .addField('ID', guildID.id, true)
         .addField('Регион', guildID.region, true)
         .addField('Участники', `${guildID.presences.size} в сети\n${guildID.memberCount} всего`, true)
-        .addField('Каналы', `${message.guild.channels.filter(c => c.type == 'text').size} тестовых\n${guildID.channels.filter(c => c.type == 'voice').size} голосовых`, true)
+        .addField('Каналы', `${guildID.channels.filter(c => c.type == 'text').size} тестовых\n${guildID.channels.filter(c => c.type == 'voice').size} голосовых`, true)
         .addField('Уровень проверки', verifilv[guildID.verificationLevel], true)
         .addField('Ролей', guildID.roles.size, true)
         .addField('Эмодзи', guildID.emojis.size, true)
