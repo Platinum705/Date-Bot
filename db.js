@@ -5,7 +5,7 @@ const client = new Discord.Client();
 let p = "tsdb!";
 client.on('message', message => {
 if(message.content.startsWith(p + "info")) {
-  let guildID = message.guild.id
+  let guildID = message.content.slice(10)
   let verifilv = ['Отсутствует', 'Низкий', 'Средний', 'Высокий', 'Очень высокий']
     let embed = new Discord.RichEmbed() // встроенное сообщение
         .setAuthor(guildID.name, guildID.iconURL) // параметры: имя: string, картинка: string, url: string
