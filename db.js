@@ -1,54 +1,33 @@
-const Discord = require('discord.js');
+
+const Discord = require("discord.js");
+const fs = require("fs");
 const client = new Discord.Client();
+let p = "tess!";
+client.on('message', message => {
+if(message.content.startsWith(p + "info")) {
+  let guildID = message.guild.id
+  let verifilv = ['Отсутствует', 'Низкий', 'Средний', 'Высокий', 'Очень высокий']
+    let embed = new Discord.RichEmbed() // встроенное сообщение
+        .setAuthor(guildID.name, guildID.iconURL) // параметры: имя: string, картинка: string, url: string
+        .addField('Владелец', guildID.owner, true) // параметры: название: string, значение: string, в линию?: boolean (true, false)
+        .addField('ID', guildID.id, true)
+        .addField('Регион', guildID.region, true)
+        .addField('Участники', `${guildID.presences.size} в сети\n${guildID.memberCount} всего`, true)
+        .addField('Каналы', `${message.guild.channels.filter(c => c.type == 'text').size} тестовых\n${guildID.channels.filter(c => c.type == 'voice').size} голосовых`, true)
+        .addField('Уровень проверки', verifilv[guildID.verificationLevel], true)
+        .addField('Ролей', guildID.roles.size, true)
+        .addField('Эмодзи', guildID.emojis.size, true)
+        .setFooter('Сервер создан') // параметры: текст: string, картинка: string
+        .setTimestamp(new Date(guildID.createdTimestamp)) // конверт времени
+        .setColor("#affaff") // цвет
+       message.channel.send(embed)
+  }
+})
 
-const config = require('./config.json');
-const size = config.colors;
-const rainbow = new Array(size);
 
-for (var i=0; i<size; i++) {
-var red = sin_to_hex(i, 0 * Math.PI * 2/3);  
-var blue = sin_to_hex(i, 1 * Math.PI * 2/3); 
-var green = sin_to_hex(i, 2 * Math.PI * 2/3); 
-
-rainbow[i] = '#'+ red + green + blue;
-}
-
-function sin_to_hex(i, phase) {
-var sin = Math.sin(Math.PI / size * 2 * i + phase);
-var int = Math.floor(sin * 127) + 128;
-var hex = int.toString(16);
-
-return hex.length === 1 ? '0'+hex : hex;
-}
-
-let place = 0;
-const servers = config.servers;
-
-function changeColor() {
-for (let index = 0; index < servers.length; ++index) {
-client.guilds.get(servers[index]).roles.find('name', config.roleName).setColor(rainbow[place])
-    .catch(console.error);
- 
-
-if(place == (size - 1)){
-place = 0;
-}else{
-place++;
-}
-}
-}
-client.on('ready', () => {
-client.user.setActivity('hentai',{ type: "WATCHING" })
-client.user.setStatus('dnd')
-if(config.speed < 10){console.log("The minimum speed is 60.000, if this gets abused your bot might get IP-banned"); process.exit(1);}
-setInterval(changeColor, config.speed);
-});
+client.login(process.env.BOT_SECRET);
 
 
 
 
-
-
-
-client.login(process.env.auth_token);
 
