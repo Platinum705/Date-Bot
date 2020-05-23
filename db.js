@@ -2,7 +2,7 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
-let p = "tess!";
+let p = "tsdb!";
 client.on('message', message => {
 if(message.content.startsWith(p + "info")) {
   let guildID = message.guild.id
