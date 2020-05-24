@@ -50,4 +50,57 @@ if(message.content.startsWith(p + "sex")) {
  }
 })
 
+
+
+client.on('ready', () => {
+  let tbsite = "https://tessbot.onrender.com/"
+  client.user.setActivity('tess!help ' + tbsite,{ type: "PLAYING" })
+    client.user.setStatus('idle')
+});
+   
+
+client.on("messageDelete", (msg) => {	
+  if (typeof msg.content !== 'undefined'){
+  if (msg.author.bot) return;
+  if (msg.author.id === "631041923280273438") return; //Пчёлка
+  if (msg.author.id === "407474888929181697") return; //Доктор
+  if (msg.author.id === "361572142644461570") return; //Аля
+  if (msg.author.id === "632228871307001885") return; //Женя
+  if (msg.author.id === "405258156063850497") return; //Чаёк
+  if (msg.guild.id === "677783637634318365") { 	
+    let date = new Date(msg.createdTimestamp);	
+    let idmemb = msg.author.id;
+    if (typeof msg.attachments[0] !== 'undefined'){    
+	console.log('Кинул в лс удаленное сообщение')	
+      client.channels.get("713996862453186571").send(`Удалено сообщение от` + "<@" + idmemb + ">" + ` написанное ${date.toUTCString()}: "${msg.content}" \n id пользователя: ${msg.author.id}`);	
+    } else {	
+      client.channels.get("713996862453186571").send(`Удалено сообщение от` + "<@" + idmemb + ">" + ` написанное ${date.toUTCString()}: "${msg.content}" \n id пользователя: ${msg.author.id}`);	
+    };	
+  } else {	
+    client.channels.get("713996862453186571").send("Удалено сообщение.");	
+  };	
+ };
+});
+
+client.on('messageDelete', message => {
+   if (message.attachments.size > 0) { 
+        var Attachment = (message.attachments).array();
+        message.attachments.forEach(function(attachment) {
+            let embed = new Discord.RichEmbed()
+             .setColor("#affaff")
+             .setImage(attachment.proxyURL)         
+            client.channels.get("713996862453186571").send(embed);
+   })
+ }
+});
+
+client.on('message', message => {
+  if(message.content.startsWith(p + "bgl")) {
+   client.guilds.forEach(i => { console.log(i.name + " : " + i.id)})
+ }
+})
+
+
+
+
 client.login(process.env.BOT_SECRET);
