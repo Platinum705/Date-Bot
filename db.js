@@ -1,8 +1,10 @@
 const Discord = require('discord.js')
 const fs = require('fs') // подключаем fs к файлу
-const bot = new Discord.Client()
+const client = new Discord.Client()
+let p = "tess!"
 
 client.on('message', message => {
+if(message.content.startsWith(p + "sex")) {
  let mentionuser = message.mentions.users.first();
   if (mentionuser == null) return; 
      if (message.channel.nsfw == false) { return message.channel.send("Разрешено только в каналах с nsfw") }
@@ -45,6 +47,7 @@ client.on('message', message => {
     .setFooter("TessBot|Hentai")
     .setTimestamp()
     message.channel.send(hentembed)
+ }
 })
 
 client.login(process.env.BOT_SECRET);
